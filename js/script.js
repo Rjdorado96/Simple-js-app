@@ -3,3 +3,15 @@ let pokemonList = [
     {name: 'Primeape', height: 1, type: 'fighting'},
     {name: 'Infernape', height: 1.2, type: ['fire', 'fighting']}
 ];
+
+for (let i = 0; i < 3; i++) {
+    document.write(pokemonList[i].name + '(height: ' + pokemonList[i].height + ')');
+    
+
+
+    if (pokemonList[i].height > 1.5) {
+        document.write('- Wow that\'s a big Pokemon!');
+    }
+
+    document.write('<br>');
+};
