@@ -10,7 +10,7 @@ for (let i = 0; i < 3; i++) {
 
 
     if (pokemonList[i].height > 1.5) {
-        document.write('- Wow that\'s a big Pokemon!');
+        document.write(' - Wow that\'s a big Pokemon!');
     }
 
     document.write('<br>');
