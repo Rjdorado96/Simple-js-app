@@ -4,7 +4,7 @@ let pokemonList = [
     {name: 'Infernape', height: 1.2, type: ['fire', 'fighting']}
 ];
 
-for (let i = 0; i < 3; i++) {
+/*for (let i = 0; i < 3; i++) {
     document.write(pokemonList[i].name + '(height: ' + pokemonList[i].height + ')');
     
 
@@ -14,4 +14,19 @@ for (let i = 0; i < 3; i++) {
     }
 
     document.write('<br>');
-};
+};*/
+
+function myPokemon (pokemon) {
+    document.write(pokemon.name + '(height:' + pokemon.height + ')')
+
+    if (pokemon.height > 1.5) {
+        document.write(' - Wow that\'s a big Pokemon!');
+    }
+
+    document.write('<br>');
+}
+
+pokemonList.forEach(myPokemon);
+
+
+
