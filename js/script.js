@@ -86,11 +86,15 @@ function showModal(pokemon) {
     titleElement.innerText = pokemon.name;
 
     let contentElement = document.createElement('p');
-    contentElement.innerText = pokemon.height;
+    contentElement.innerText = `Height: ${pokemon.height}`;
+
+    let imageElement = document.createElement('img')
+    imageElement.src = pokemon.imageUrl;
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
+    modal.appendChild(imageElement);
     modalContainer.appendChild(modal);
     
     modalContainer.classList.add('is-visible');
@@ -116,10 +120,8 @@ function showModal(pokemon) {
   });
 
   document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal(pokemon.name, pokemon.height);
+    showModal(pokemon);
   });
-
-  // THE RETURN STATEMENT HERE
 }
 
 
