@@ -7,7 +7,7 @@ let pokemonRepository = (function (){
         pokemonList.push(pokemon)
     }
 
-    function getAll(pokemon){
+    function getAll(){
         return pokemonList;
     }
 
@@ -69,7 +69,7 @@ let pokemonRepository = (function (){
 })();
 
 
-  
+
 let modalContainer = document.querySelector('#modal-container');
 
 function showModal(pokemon) {
