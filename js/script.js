@@ -19,6 +19,8 @@ let pokemonRepository = (function (){
         button.classList.add('pokemonListButton');
         button.classList.add('btn');
         button.classList.add('btn-light');
+        button.dataset.target('modal-container');
+        button.dataset.toggle('modal');
         listItem.classList.add('group-list-item');
         listItem.appendChild(button);
         pokemonListContainer.appendChild(listItem);
@@ -73,9 +75,28 @@ let pokemonRepository = (function (){
 
 
 
-let modalContainer = document.querySelector('#modal-container');
+//let modalContainer = document.querySelector('#modal-container');
 
 function showModal(pokemon) {
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalHeader = $('.modal-header');
+
+    modalTitle.empty();
+    modalBody.empty();
+
+    let nameElement = $('<h1' + pokemon.name + '</h1>');
+    let imageElement = $('<img class="modal-img" style="width:50%">');
+    imageElement.src = pokemon.imageUrl;
+    let heightElement = $('<p>' + 'Height: ' + pokemon.height + '</p>');
+    let typesElement = $('<p>' + 'Type: ' + pokemon.types + '</p>');
+
+    modalTitle.append(nameElement);
+    modalBody.append(imageElement);
+    modalBody.append(heightElement);
+    modalBody.append(typesElement);
+}
+    /*
 modalContainer.innerHTML = '';
 let modal = document.createElement('div');
 modal.classList.add('modal');
@@ -111,7 +132,7 @@ window.addEventListener('keydown', (e) => {
 if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
     hideModal();  
 }
-});
+}); */
 
 modalContainer.addEventListener('click', (e) => {
 // Since this is also triggered when clicking INSIDE the modal
@@ -136,7 +157,3 @@ function myPokemon (pokemon) {
 pokemonRepository.loadList().then(function(){
     pokemonRepository.getAll().forEach(myPokemon);
 });
-
-
-
-
